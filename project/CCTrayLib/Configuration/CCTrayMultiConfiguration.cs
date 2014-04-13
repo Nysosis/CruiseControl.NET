@@ -237,6 +237,11 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.Configuration
             get { return persistentConfiguration.Growl; }
         }
 
+		public GPIOConfiguration GPIO 
+		{
+			get { return persistentConfiguration.GPIO; }
+		}
+
         public ICruiseServerManagerFactory CruiseServerManagerFactory
         {
             get { return cruiseServerManagerFactory; }

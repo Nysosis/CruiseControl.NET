@@ -196,6 +196,7 @@
     </Compile>
     <Compile Include="Configuration\ExecCommands.cs" />
     <Compile Include="Configuration\ExtensionAttribute.cs" />
+    <Compile Include="Configuration\GPIOConfiguration.cs" />
     <Compile Include="Configuration\GrowlConfiguration.cs" />
     <Compile Include="Configuration\ICCTrayMultiConfiguration.cs">
       <SubType>Code</SubType>
@@ -229,6 +230,7 @@
     <Compile Include="ErrorLevel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GPIO\GPIOServerStatus.cs" />
     <Compile Include="Growl\GrowlController.cs" />
     <Compile Include="Growl\GrowlMessages.cs" />
     <Compile Include="IconNotFoundException.cs">
@@ -420,6 +422,12 @@
       <DependentUpon>ExecSettingsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Func.cs" />
+    <Compile Include="Presentation\GPIOSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\GPIOSettingsControl.Designer.cs">
+      <DependentUpon>GPIOSettingsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\GrowlSettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -574,6 +582,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="X10\X10Definitions.cs" />
+    <None Include="Properties\DataSources\ThoughtWorks.CruiseControl.CCTrayLib.GPIO.GPIOServerStatus.datasource" />
     <None Include="ResourceIcons\Gray.ico" />
     <None Include="ResourceIcons\Green.ico" />
     <None Include="ResourceIcons\Orange.ico" />
@@ -588,6 +597,9 @@
     <EmbeddedResource Include="Presentation\CCTrayMultiSettingsForm.resx">
       <DependentUpon>CCTrayMultiSettingsForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\GPIOSettingsControl.resx">
+      <DependentUpon>GPIOSettingsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -728,6 +740,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

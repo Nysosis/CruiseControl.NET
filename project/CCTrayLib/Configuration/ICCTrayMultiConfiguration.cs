@@ -23,6 +23,7 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.Configuration
 		X10Configuration X10 { get; }
 		SpeechConfiguration Speech { get; }
 		GrowlConfiguration Growl { get; }
+		GPIOConfiguration GPIO { get; }
 
         bool AlwaysOnTop { get; set; }
 		bool ShowInTaskbar { get; set; }

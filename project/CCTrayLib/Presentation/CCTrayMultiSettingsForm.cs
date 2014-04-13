@@ -32,6 +32,7 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.Presentation
             speechSettings.BindSpeechControls(configuration.Speech);
 			growlSettings.BindGrowlControls(configuration.Growl);
             execSettingsControl1.BindExecControls(configuration);
+			gpioSettingsControl1.BindGPIOConfiguration(configuration.GPIO);
         }
 
 		private void HookPersistentWindowState()
@@ -66,6 +67,7 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.Presentation
             speechSettings.PersistSpeechTabSettings(configuration.Speech);
 			growlSettings.PersistGrowlTabSettings(configuration.Growl);
             execSettingsControl1.PersistExecTabSettings(configuration);
+			gpioSettingsControl1.PersistGPIOConfiguration(configuration.GPIO);
 			configuration.Persist();
 		}
 

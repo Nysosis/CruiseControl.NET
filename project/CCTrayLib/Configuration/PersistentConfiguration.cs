@@ -13,6 +13,7 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.Configuration
 		public X10Configuration X10 = new X10Configuration();
 		public SpeechConfiguration Speech = new SpeechConfiguration();
 		public GrowlConfiguration Growl = new GrowlConfiguration();
+		public GPIOConfiguration GPIO = new GPIOConfiguration();
         public bool AlwaysOnTop = false;
 		public bool ShowInTaskbar = false;
         public bool ReportProjectChanges = true;

@@ -18,6 +18,7 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.GPIO {
 			this._Monitor = monitor;
 			this._Configuration = configuration;
 			this._Mapper = new GPIOPinMapper();
+			this._Mapper.DisableAllPins();
 
 			this._Monitor.Polled += new MonitorPolledEventHandler(_Monitor_Polled);
 
@@ -26,6 +27,8 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.GPIO {
 			_Map.Add(ProjectState.Building, (c) => c.BuildingPins);
 			_Map.Add(ProjectState.NotConnected, (c) => c.NotConnectedPins);
 			_Map.Add(ProjectState.Success, (c) => c.SuccessPins);
+
+			_Mapper.EnablePins(_Map[ProjectState.NotConnected](_Configuration));
 		}
 
 		void _Monitor_Polled(object sender, MonitorPolledEventArgs args) {

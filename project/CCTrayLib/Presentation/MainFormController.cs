@@ -8,6 +8,7 @@ using ThoughtWorks.CruiseControl.CCTrayLib.Growl;
 using ThoughtWorks.CruiseControl.CCTrayLib.Monitoring;
 using ThoughtWorks.CruiseControl.CCTrayLib.X10;
 using ThoughtWorks.CruiseControl.Remote.Parameters;
+using ThoughtWorks.CruiseControl.CCTrayLib.GPIO;
 #if !DISABLE_COM
 using ThoughtWorks.CruiseControl.CCTrayLib.Speech;
 #endif
@@ -31,6 +32,7 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.Presentation
         private X10Controller x10Controller;
 		private GrowlController growlController;
         private BuildTransitionExecRunner execRunner;
+		private GPIOController gpioController;
         private MainForm mainForm;
         private Dictionary<string, ServerSnapshotChangedEventArgs> changeList = new Dictionary<string, ServerSnapshotChangedEventArgs>();
 #if !DISABLE_COM
@@ -65,6 +67,7 @@ namespace ThoughtWorks.CruiseControl.CCTrayLib.Presentation
 			x10Controller = new X10Controller(aggregatedProjectMonitor,new DateTimeProvider(),configuration.X10,lampController);
 			
 			growlController = new GrowlController(aggregatedProjectMonitor, configuration.Growl);
+			gpioController = new GPIOController(aggregatedProjectMonitor, configuration.GPIO);
 
 #if !DISABLE_COM
 			IBalloonMessageProvider balloonMessageProvider = new ConfigurableBalloonMessageProvider(configuration.BalloonMessages);

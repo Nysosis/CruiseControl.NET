@@ -28,7 +28,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -44,6 +44,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -127,6 +128,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Growl.CoreLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="RaspberryPiDotNet">
+      <HintPath>..\..\lib\RaspberryPiDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -154,6 +158,10 @@
       <Link>CommonAssemblyInfo.cs</Link>
       <SubType>Code</SubType>
     </Compile>
+    <Content Include="..\..\lib\libbcm2835.so">
+      <Link>libbcm2835.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -230,6 +238,8 @@
     <Compile Include="ErrorLevel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GPIO\GPIOController.cs" />
+    <Compile Include="GPIO\GPIOPinMapper.cs" />
     <Compile Include="GPIO\GPIOServerStatus.cs" />
     <Compile Include="Growl\GrowlController.cs" />
     <Compile Include="Growl\GrowlMessages.cs" />
